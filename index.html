@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест livechat</title>
+</head>
+<body>
+  <p>Привет! На этой странице можно протестить работу метода setUserId.</p>
+  <p>Для этого в адресной строке нужно указать get-параметр, содержащий id-пользователя (например, /?id=12345 )</p>
+  <script>
+    window.location.search.substr(1).split('&')
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === 'id') {
+                console.log(tmp[1])
+          }
+        });
+  </script>
+</body>
+</html>
