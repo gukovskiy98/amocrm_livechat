@@ -8,7 +8,9 @@
 </head>
 <body>
   <p>Привет! На этой странице можно протестить работу метода setUserId.</p>
-  <p>Для этого в адресной строке нужно указать get-параметр, содержащий id-пользователя (например, /?id=12345 )</p>
+  <p>Для этого в адресной строке нужно указать get-параметр, содержащий id-пользователя (например, /?id=12345 ) или ввести id в поле ниже</p>
+  <input id="user_id" type="text">
+  <button id="submit" type="submit">Готово</button>
   <script>
     window.location.search.substr(1).split('&')
         .forEach(function (item) {
@@ -17,6 +19,17 @@
                 console.log(tmp[1])
           }
         });
+    const INPUT = document.querySelector('#user_id');
+    const SUBMIT = document.querySelector('#submit');
+    const URL = window.location.origin + window.location.pathname;
+    
+    SUBMIT.addEventListener('click', () => {
+      if (!INPUT.value) {
+        return;
+      }
+
+      window.location.href = `${URL}?id=${INPUT.value}`;
+    })
   </script>
 </body>
 </html>
