@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Тест livechat</title>
-</head>
-<body>
-  <p>Привет! На этой странице можно протестить работу метода setUserId.</p>
-  <p>Для этого в адресной строке нужно указать get-параметр, содержащий id-пользователя (например, /?id=12345 ) или ввести id в поле ниже</p>
-  <input id="user_id" type="text">
-  <button id="submit" type="submit">Готово</button>
-  <script>
-    window.location.search.substr(1).split('&')
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест livechat</title>
+  </head>
+  <body>
+    <p>Привет! На этой странице можно протестить работу метода setUserId.</p>
+    <p>
+      Для этого в адресной строке нужно указать get-параметр, содержащий
+      id-пользователя (например, /?id=12345 ) или ввести id в поле ниже
+    </p>
+    <input id="user_id" type="text" />
+    <button id="submit" type="submit">Готово</button>
+    <script>
+      (function (a, m, o, c, r, m) {
+        a[m] = {
+          id: '1360',
+          hash: '370c9383c7681cff8064c090151b4b3863b638a9767079d38150b310a4600b3f',
+          locale: 'ru',
+          inline: false,
+          setMeta: function (p) {
+            this.params = (this.params || []).concat([p]);
+          },
+        };
+        a[o] =
+          a[o] ||
+          function () {
+            (a[o].q = a[o].q || []).push(arguments);
+          };
+        var d = a.document,
+          s = d.createElement('script');
+        s.async = true;
+        s.id = m + '_script';
+        s.src = 'http://gso.ngukovsky.amocrm2.saas/js/button.js?1643216410';
+        d.head && d.head.appendChild(s);
+      })(window, 0, 'amoSocialButton', 0, 0, 'amo_social_button');
+    </script>
+    <script>
+      window.location.search
+        .substr(1)
+        .split('&')
         .forEach(function (item) {
-          tmp = item.split("=");
+          tmp = item.split('=');
           if (tmp[0] === 'id') {
-                console.log(tmp[1])
+            console.log(tmp[1]);
           }
         });
-    const INPUT = document.querySelector('#user_id');
-    const SUBMIT = document.querySelector('#submit');
-    const URL = window.location.origin + window.location.pathname;
-    
-    SUBMIT.addEventListener('click', () => {
-      if (!INPUT.value) {
-        return;
-      }
+      const INPUT = document.querySelector('#user_id');
+      const SUBMIT = document.querySelector('#submit');
+      const URL = window.location.origin + window.location.pathname;
 
-      window.location.href = `${URL}?id=${INPUT.value}`;
-    })
-  </script>
-</body>
+      SUBMIT.addEventListener('click', () => {
+        if (!INPUT.value) {
+          return;
+        }
+
+        window.location.href = `${URL}?id=${INPUT.value}`;
+      });
+    </script>
+  </body>
 </html>
